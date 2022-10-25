@@ -566,15 +566,16 @@ img {
   line-height: 1.2;
 }
 
-.profile-skill ul > li {
-  float: left;
-  margin-right: 15px;
-  margin-top: 26px;
-  list-style: none;
+.info_skill {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 60px;
+  align-items: center;
 }
 
-.profile-skill > li img {
-  width: 80%;
+.skill img {
+  width: 60%;
 }
 
 .profile-edu {
@@ -604,6 +605,7 @@ img {
   width: 85%;
   padding: 30px;
   line-height: 1.6;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 14px;
 }
 
@@ -671,6 +673,31 @@ img {
 
 .co03 {
   background: #deebf3;
+}
+
+.contact {
+  left: 50%;
+  top: 50%;
+}
+
+.contact li {
+  display: inline-block;
+}
+
+.contact span {
+  display: block;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #9885d7;
+  font-size: 1.5rem;
+  margin-bottom: 1em;
+}
+
+.contact img {
+  width: 100%;
+}
+
+.contact li:not(:first-child) {
+  margin-left: 2rem
 }
 
 /* Media Queries */
