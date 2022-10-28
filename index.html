@@ -460,29 +460,174 @@
         </div>
 
         <div class="section-detail-wrapper">
-          <h3 class="section-heading"></h3>
-          <p class="section-text"></p>
-          <div class="contact">
-            <ul>
-              <li>
-                <span>GitHub</span>
-                <a>
-                  <img src="./image/icon_github.png">
-                </a>
-              </li>
-              <li>
-                <span>Mail</span>
-                <a>
-                  <img src="./image/Messaging-Message-Filled-icon.png">
-                </a>
-              </li>
-              <li>
-                <span>Tel</span>
-                <a>
-                  <img src="./image/pngwing.com (2).png">
-                </a>
-              </li>
-            </ul>
+          <div class="send-bx">
+            <div class="newsletter-form">
+              <form id="emailForm" class="gform" method="POST" data-email="qnfehr42@gmail.com" 
+                    action="https://script.google.com/macros/s/AKfycbygcJMU7s0v5v2TABsEbWCuJpfWOZVXjl6O71GTO-9zSJMXPB0BJXOD8hb79rN4Pcbu/exec">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="senderEmail" name="senderEmail" placeholder="Your Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="senderName" name="senderName" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message Here" required></textarea>
+                        </div>
+                        <script type="text/javascript">
+                            (function() {
+                               // get all data in form and return object
+                               function getFormData(form) {
+                                  var elements = form.elements;
+                                  var honeypot;
+
+                                  var fields = Object.keys(elements).filter(function(k) {
+                                     if (elements[k].name === "honeypot") {
+                                     honeypot = elements[k].value;
+                                     return false;
+                                     }
+                                     return true;
+                                  }).map(function(k) {
+                                     if(elements[k].name !== undefined) {
+                                     return elements[k].name;
+                                     // special case for Edge's html collection
+                                     }else if(elements[k].length > 0){
+                                     return elements[k].item(0).name;
+                                     }
+                                  }).filter(function(item, pos, self) {
+                                     return self.indexOf(item) == pos && item;
+                                  });
+
+                                  var formData = {};
+                                  fields.forEach(function(name){
+                                     var element = elements[name];
+                                     
+                                     // singular form elements just have one value
+                                     formData[name] = element.value;
+
+                                     // when our element has multiple items, get their values
+                                     if (element.length) {
+                                     var data = [];
+                                     for (var i = 0; i < element.length; i++) {
+                                        var item = element.item(i);
+                                        if (item.checked || item.selected) {
+                                           data.push(item.value);
+                                        }
+                                     }
+                                     formData[name] = data.join(', ');
+                                     }
+                                  });
+
+                                  // add form-specific values into the data
+                                  formData.formDataNameOrder = JSON.stringify(fields);
+                                  formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
+                                  formData.formGoogleSendEmail
+                                     = form.dataset.email || ""; // no email by default
+
+                                  return {data: formData, honeypot: honeypot};
+                               }
+
+                               function handleFormSubmit(event) {  // handles form submit without any jquery
+                                  event.preventDefault();           // we are submitting via xhr below
+                                  var form = event.target;
+                                  var formData = getFormData(form);
+                                  var data = formData.data;
+
+                                  // If a honeypot field is filled, assume it was done so by a spam bot.
+                                  if (formData.honeypot) {
+                                     return false;
+                                  }
+
+                                  disableAllButtons(form);
+                                  var url = form.action;
+                                  var xhr = new XMLHttpRequest();
+                                  xhr.open('POST', url);
+                                  // xhr.withCredentials = true;
+                                  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                                  xhr.onreadystatechange = function() {
+                                     if (xhr.readyState === 4 && xhr.status === 200) {
+                                        form.reset();
+                                        var formElements = form.querySelector(".form-elements")
+                                        if (formElements) {
+                                           formElements.style.display = "none"; // hide form
+                                        }
+                                        var thankYouMessage = form.querySelector(".thankyou_message");
+                                        if (thankYouMessage) {
+                                           thankYouMessage.style.display = "block";
+                                           alert("메일 전송에 성공했습니다. 확인 후 회신드리겠습니다.");
+                                        }
+                                     }
+                                  };
+                                  // url encode form data for sending as post data
+                                  var encoded = Object.keys(data).map(function(k) {
+                                     return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+                                  }).join('&');
+                                  xhr.send(encoded);
+                               }
+                               
+                               function loaded() {
+                                  // bind to the submit event of our form
+                                  var forms = document.querySelectorAll("form.gform");
+                                  for (var i = 0; i < forms.length; i++) {
+                                     forms[i].addEventListener("submit", handleFormSubmit, false);
+                                  }
+                               };
+                               document.addEventListener("DOMContentLoaded", loaded, false);
+
+                               function disableAllButtons(form) {
+                                  var buttons = form.querySelectorAll("button");
+                                  for (var i = 0; i < buttons.length; i++) {
+                                     buttons[i].disabled = true;
+                                  }
+                               }
+                               })();
+                        </script>
+                        <div class="form-group form-btn">
+                            <button id="btnSubmit" class="btn-primary btn-block">메시지 보내기</button>
+                        </div>
+                        <div style="display:none" class="thankyou_message">
+                            <h2>저에게 연락 주셔서 감사합니다! 곧 다시 연락 드리겠습니다!</h2>
+                        </div>
+                    </form>
+            </div>
+          </div>
+          <div class="hr-sect"> or </div>
+          <div class="contact-bx">
+            <div>
+              <div class="contact-info">
+                <div class="info-logo">
+                  <img src="./image/contact-info-logo1.png">
+                </div>
+                <div class="info-content">
+                  <h5>
+                    <a>GitHub</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="contact-info">
+                <div class="info-logo">
+                  <img src="./image/contact-info-logo2.png">
+                </div>
+                <div class="info-content">
+                  <h5>
+                    <a>Email</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="contact-info">
+                <div class="info-logo">
+                  <img src="./image/contact-info-logo3.png">
+                </div>
+                <div class="info-content">
+                  <h5>
+                    <a>Phone</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
