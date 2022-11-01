@@ -665,15 +665,83 @@ img {
 }
 
 .co01 {
-  background: #f3f3f3;
+  background: #8dc647;
 }
 
 .co02 {
-  background: #94c9ff;
+  background: #6b7280;
 }
 
 .co03 {
-  background: #deebf3;
+  background: #ffffff99;
+  border: 1px solid #ddd;
+}
+
+.co04 {
+  background: #404eed;
+}
+
+.co05 {
+  background: #5865f2;
+}
+
+.co06 {
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.co07 {
+  background: #000;
+}
+
+.co08 {
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.co09 {
+  background: #000000cc;
+}
+.co10 {
+  background: #34224b;
+}
+
+.co11 {
+  background: #e50914;
+}
+
+.co12 {
+  background: #cc2c42;
+}
+
+.co13 {
+  background: #181818;
+}
+
+.co14 {
+  background: #190033;
+}
+
+.co15 {
+  background: #020824;
+}
+
+.co16 {
+  background: #121315;
+}
+
+.co17 {
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.co18 {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+}
+
+.co19 {
+  background: #141414;
 }
 
 .contact {
