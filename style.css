@@ -489,6 +489,12 @@ img {
   transform: translateY(-100%);
   top: 100%;
 }
+
+.move {
+  font-size: 12px;
+  margin-top: 5px;
+  color: rgb(107, 114, 128);
+}
 /* .work02 {
   bottom: -2185px;
 }
@@ -608,10 +614,11 @@ img {
   line-height: 1.6;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 14px;
+  padding-left: 0;
 }
 
 .keyword {
-  text-align: right;
+  text-align: left;
   margin-bottom: 10px;
 }
 

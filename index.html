@@ -231,6 +231,8 @@
                 <img class="work01" src="./image/work01.JPG" alt="">
               </a>
             </div>
+            <div class="move">※ 이미지를 클릭하시면 해당 페이지로 이동합니다.</div>
+
             <div class="info_bx">
               <dl>
                 <div class="keyword">
@@ -240,7 +242,8 @@
                 </div>
                 <dt>Project</dt>
                 <dd>CoinGecko</dd>
-                <dd class="dd_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium iure officiis
+                <dd class="dd_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium iure
+                  officiis
                   ut repellendus! Et in asperiores ea, quisquam accusamus amet debitis maxime saepe voluptates
                   architecto voluptatum, fuga nemo. Incidunt, delectus.</dd>
                 <dt>Type</dt>
@@ -268,6 +271,7 @@
                 <img class="work02" src="./image/work02.JPG" alt="">
               </a>
             </div>
+            <div class="move">※ 이미지를 클릭하시면 해당 페이지로 이동합니다.</div>
 
             <div class="info_bx">
               <dl>
@@ -305,6 +309,8 @@
                 <img class="work03" src="./image/work03.jpeg" alt="">
               </a>
             </div>
+            <div class="move">※ 이미지를 클릭하시면 해당 페이지로 이동합니다.</div>
+
             <div class="info_bx">
               <dl>
                 <div class="keyword">
@@ -341,6 +347,8 @@
                 <img class="work04" src="./image/work04.jpeg" alt="">
               </a>
             </div>
+            <div class="move">※ 이미지를 클릭하시면 해당 페이지로 이동합니다.</div>
+
             <div class="info_bx">
               <dl>
                 <div class="keyword">
@@ -376,6 +384,8 @@
                 <img class="work05" src="./image/work05.jpeg" alt="">
               </a>
             </div>
+            <div class="move">※ 이미지를 클릭하시면 해당 페이지로 이동합니다.</div>
+
             <div class="info_bx">
               <dl>
                 <div class="keyword">
@@ -411,6 +421,8 @@
                 <img class="work06" src="./image/work06.jpeg" alt="">
               </a>
             </div>
+            <div class="move">※ 이미지를 클릭하시면 해당 페이지로 이동합니다.</div>
+
             <div class="info_bx">
               <dl>
                 <div class="keyword">
@@ -463,132 +475,135 @@
         <div class="section-detail-wrapper">
           <div class="send-bx">
             <div class="newsletter-form">
-              <form id="emailForm" class="gform" method="POST" data-email="qnfehr42@gmail.com" 
-                    action="https://script.google.com/macros/s/AKfycbygcJMU7s0v5v2TABsEbWCuJpfWOZVXjl6O71GTO-9zSJMXPB0BJXOD8hb79rN4Pcbu/exec">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="senderEmail" name="senderEmail" placeholder="Your Email Address" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="senderName" name="senderName" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message Here" required></textarea>
-                        </div>
-                        <script type="text/javascript">
-                            (function() {
-                               // get all data in form and return object
-                               function getFormData(form) {
-                                  var elements = form.elements;
-                                  var honeypot;
+              <form id="emailForm" class="gform" method="POST" data-email="qnfehr42@gmail.com"
+                action="https://script.google.com/macros/s/AKfycbygcJMU7s0v5v2TABsEbWCuJpfWOZVXjl6O71GTO-9zSJMXPB0BJXOD8hb79rN4Pcbu/exec">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="senderEmail" name="senderEmail"
+                    placeholder="Your Email Address" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="senderName" name="senderName" placeholder="Your Name"
+                    required>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message Here"
+                    required></textarea>
+                </div>
+                <script type="text/javascript">
+                  (function () {
+                    // get all data in form and return object
+                    function getFormData(form) {
+                      var elements = form.elements;
+                      var honeypot;
 
-                                  var fields = Object.keys(elements).filter(function(k) {
-                                     if (elements[k].name === "honeypot") {
-                                     honeypot = elements[k].value;
-                                     return false;
-                                     }
-                                     return true;
-                                  }).map(function(k) {
-                                     if(elements[k].name !== undefined) {
-                                     return elements[k].name;
-                                     // special case for Edge's html collection
-                                     }else if(elements[k].length > 0){
-                                     return elements[k].item(0).name;
-                                     }
-                                  }).filter(function(item, pos, self) {
-                                     return self.indexOf(item) == pos && item;
-                                  });
+                      var fields = Object.keys(elements).filter(function (k) {
+                        if (elements[k].name === "honeypot") {
+                          honeypot = elements[k].value;
+                          return false;
+                        }
+                        return true;
+                      }).map(function (k) {
+                        if (elements[k].name !== undefined) {
+                          return elements[k].name;
+                          // special case for Edge's html collection
+                        } else if (elements[k].length > 0) {
+                          return elements[k].item(0).name;
+                        }
+                      }).filter(function (item, pos, self) {
+                        return self.indexOf(item) == pos && item;
+                      });
 
-                                  var formData = {};
-                                  fields.forEach(function(name){
-                                     var element = elements[name];
-                                     
-                                     // singular form elements just have one value
-                                     formData[name] = element.value;
+                      var formData = {};
+                      fields.forEach(function (name) {
+                        var element = elements[name];
 
-                                     // when our element has multiple items, get their values
-                                     if (element.length) {
-                                     var data = [];
-                                     for (var i = 0; i < element.length; i++) {
-                                        var item = element.item(i);
-                                        if (item.checked || item.selected) {
-                                           data.push(item.value);
-                                        }
-                                     }
-                                     formData[name] = data.join(', ');
-                                     }
-                                  });
+                        // singular form elements just have one value
+                        formData[name] = element.value;
 
-                                  // add form-specific values into the data
-                                  formData.formDataNameOrder = JSON.stringify(fields);
-                                  formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
-                                  formData.formGoogleSendEmail
-                                     = form.dataset.email || ""; // no email by default
+                        // when our element has multiple items, get their values
+                        if (element.length) {
+                          var data = [];
+                          for (var i = 0; i < element.length; i++) {
+                            var item = element.item(i);
+                            if (item.checked || item.selected) {
+                              data.push(item.value);
+                            }
+                          }
+                          formData[name] = data.join(', ');
+                        }
+                      });
 
-                                  return {data: formData, honeypot: honeypot};
-                               }
+                      // add form-specific values into the data
+                      formData.formDataNameOrder = JSON.stringify(fields);
+                      formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
+                      formData.formGoogleSendEmail
+                        = form.dataset.email || ""; // no email by default
 
-                               function handleFormSubmit(event) {  // handles form submit without any jquery
-                                  event.preventDefault();           // we are submitting via xhr below
-                                  var form = event.target;
-                                  var formData = getFormData(form);
-                                  var data = formData.data;
+                      return { data: formData, honeypot: honeypot };
+                    }
 
-                                  // If a honeypot field is filled, assume it was done so by a spam bot.
-                                  if (formData.honeypot) {
-                                     return false;
-                                  }
+                    function handleFormSubmit(event) {  // handles form submit without any jquery
+                      event.preventDefault();           // we are submitting via xhr below
+                      var form = event.target;
+                      var formData = getFormData(form);
+                      var data = formData.data;
 
-                                  disableAllButtons(form);
-                                  var url = form.action;
-                                  var xhr = new XMLHttpRequest();
-                                  xhr.open('POST', url);
-                                  // xhr.withCredentials = true;
-                                  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                                  xhr.onreadystatechange = function() {
-                                     if (xhr.readyState === 4 && xhr.status === 200) {
-                                        form.reset();
-                                        var formElements = form.querySelector(".form-elements")
-                                        if (formElements) {
-                                           formElements.style.display = "none"; // hide form
-                                        }
-                                        var thankYouMessage = form.querySelector(".thankyou_message");
-                                        if (thankYouMessage) {
-                                           thankYouMessage.style.display = "block";
-                                           alert("메일 전송에 성공했습니다. 확인 후 회신드리겠습니다.");
-                                        }
-                                     }
-                                  };
-                                  // url encode form data for sending as post data
-                                  var encoded = Object.keys(data).map(function(k) {
-                                     return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-                                  }).join('&');
-                                  xhr.send(encoded);
-                               }
-                               
-                               function loaded() {
-                                  // bind to the submit event of our form
-                                  var forms = document.querySelectorAll("form.gform");
-                                  for (var i = 0; i < forms.length; i++) {
-                                     forms[i].addEventListener("submit", handleFormSubmit, false);
-                                  }
-                               };
-                               document.addEventListener("DOMContentLoaded", loaded, false);
+                      // If a honeypot field is filled, assume it was done so by a spam bot.
+                      if (formData.honeypot) {
+                        return false;
+                      }
 
-                               function disableAllButtons(form) {
-                                  var buttons = form.querySelectorAll("button");
-                                  for (var i = 0; i < buttons.length; i++) {
-                                     buttons[i].disabled = true;
-                                  }
-                               }
-                               })();
-                        </script>
-                        <div class="form-group form-btn">
-                            <button id="btnSubmit" class="btn-primary btn-block">메시지 보내기</button>
-                        </div>
-                        <div style="display:none" class="thankyou_message">
-                            <h2>저에게 연락 주셔서 감사합니다! 곧 다시 연락 드리겠습니다!</h2>
-                        </div>
-                    </form>
+                      disableAllButtons(form);
+                      var url = form.action;
+                      var xhr = new XMLHttpRequest();
+                      xhr.open('POST', url);
+                      // xhr.withCredentials = true;
+                      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                      xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                          form.reset();
+                          var formElements = form.querySelector(".form-elements")
+                          if (formElements) {
+                            formElements.style.display = "none"; // hide form
+                          }
+                          var thankYouMessage = form.querySelector(".thankyou_message");
+                          if (thankYouMessage) {
+                            thankYouMessage.style.display = "block";
+                            alert("메일 전송에 성공했습니다. 확인 후 회신드리겠습니다.");
+                          }
+                        }
+                      };
+                      // url encode form data for sending as post data
+                      var encoded = Object.keys(data).map(function (k) {
+                        return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+                      }).join('&');
+                      xhr.send(encoded);
+                    }
+
+                    function loaded() {
+                      // bind to the submit event of our form
+                      var forms = document.querySelectorAll("form.gform");
+                      for (var i = 0; i < forms.length; i++) {
+                        forms[i].addEventListener("submit", handleFormSubmit, false);
+                      }
+                    };
+                    document.addEventListener("DOMContentLoaded", loaded, false);
+
+                    function disableAllButtons(form) {
+                      var buttons = form.querySelectorAll("button");
+                      for (var i = 0; i < buttons.length; i++) {
+                        buttons[i].disabled = true;
+                      }
+                    }
+                  })();
+                </script>
+                <div class="form-group form-btn">
+                  <button id="btnSubmit" class="btn-primary btn-block">메시지 보내기</button>
+                </div>
+                <div style="display:none" class="thankyou_message">
+                  <h2>저에게 연락 주셔서 감사합니다! 곧 다시 연락 드리겠습니다!</h2>
+                </div>
+              </form>
             </div>
           </div>
           <div class="hr-sect"> or </div>
