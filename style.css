@@ -802,6 +802,7 @@ img {
 .form-control {
   display: block;
   width: 100%;
+  font-family: Poppins, sans-serif;
   font-weight: 400;
   line-height: 1.5;
   background-clip: padding-box;
